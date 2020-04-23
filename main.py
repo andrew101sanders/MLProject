@@ -17,3 +17,5 @@ import io
 import os
 
 datacsv = pd.read_csv('airbnb-listings.csv', sep=';', low_memory=False)
+
+print(datacsv)
