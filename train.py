@@ -79,7 +79,7 @@ model.compile(optimizer='adam',
 
 
 model.fit_generator(generator=train_generator, steps_per_epoch=STEP_SIZE_TRAIN, validation_data=test_generator,
-                    validation_steps=STEP_SIZE_TEST, epochs=25, callbacks=callbacks.EarlyStopping(monitor='mean_squared_error', patience=2, restore_best_weights=True))
+                    validation_steps=STEP_SIZE_TEST, epochs=25, callbacks=[callbacks.EarlyStopping(monitor='mean_squared_error', patience=2, restore_best_weights=True)])
 
 model.save('newmodel.h5')
 model.summary()
