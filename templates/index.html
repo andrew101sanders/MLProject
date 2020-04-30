@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ML Project</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@1.0.1/build/base-min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='main.css') }}"
+    />
+  </head>
+  <body>
+    <h1>AirBnB Pricer</h1>
+    <p>Estimate the perfect price with machine learning!</p>
+    <div>
+      <label>Upload Image</label>
+      <input
+        type="file"
+        id="img"
+        name="img"
+        accept="image/*"
+        onchange="onFileSelected(event)"
+      />
+    </div>
+    <img id="image-display" width="200" />
+    <p id="file-name"></p>
+    <p>Prediction: <span id="prediction"></span></p>
+
+    <script src="{{ url_for('static',filename='main.js') }}"></script>
+  </body>
+</html>
