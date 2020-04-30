@@ -2,12 +2,11 @@ import os
 import sys
 import re
 import base64
-
 # Flask
 from flask import Flask, redirect, url_for, request, render_template, Response, jsonify, redirect
 
 # TensorFlow and tf.keras
-
+os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
