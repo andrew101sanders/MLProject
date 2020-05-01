@@ -1,16 +1,16 @@
+from io import BytesIO
+import numpy as np
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.models import load_model
 import os
 import sys
 import re
 import base64
-import random
-
+# Flask
 from flask import Flask, redirect, url_for, request, render_template, Response, jsonify, redirect
 
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing import image
-
-import numpy as np
-from io import BytesIO
+# TensorFlow and tf.keras
+os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 
 
 app = Flask(__name__)
