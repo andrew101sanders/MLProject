@@ -18,7 +18,7 @@
     <h1>AirBnB Pricer</h1>
     <p>Estimate the perfect price with machine learning!</p>
     <div>
-      <label>Upload Image</label>
+      <h3>1. Upload an image</h3>
       <input
         type="file"
         id="img"
@@ -29,6 +29,24 @@
     </div>
     <img id="image-display" width="200" />
     <p id="file-name"></p>
+
+    <div>
+      <h3>2. Dial in your prediction</h3>
+      <div>
+        <label for="param1">Param 1</label>
+        <input type="text" name="param1" id="param1" />
+      </div>
+      <div>
+        <label for="param2">Param 2</label>
+        <input type="text" name="param2" id="param2" />
+      </div>
+      <div>
+        <label for="param3">Param 3</label>
+        <input type="text" name="param3" id="param3" />
+      </div>
+      <button onclick="onDialSubmit()">Submit</button>
+    </div>
+
     <p>Prediction: <span id="prediction"></span></p>
 
     <script src="{{ url_for('static',filename='main.js') }}"></script>

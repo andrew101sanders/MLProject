@@ -2,16 +2,13 @@ import os
 import sys
 import re
 import base64
+import random
 
-# Flask
 from flask import Flask, redirect, url_for, request, render_template, Response, jsonify, redirect
-
-# TensorFlow and tf.keras
 
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
-# Some utilites
 import numpy as np
 from io import BytesIO
 
@@ -40,8 +37,6 @@ def index():
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     if request.method == 'POST':
-        print("*********************")
-        # print(request.json[0:200])
         img = request.json
 
         image_data = re.sub('^data:image/.+;base64,', '', img)
@@ -52,6 +47,16 @@ def predict():
         return jsonify(prediction=prediction)
 
     return None
+
+
+@app.route("/regress", methods=['GET', 'POST'])
+def regress():
+    if request.method == "POST":
+        params = request.json
+
+        regressRes = params * 2
+
+        return jsonify(regressRes=regressRes)
 
 
 if __name__ == "__main__":
