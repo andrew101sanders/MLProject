@@ -1,3 +1,4 @@
+import pickle
 from io import BytesIO
 import numpy as np
 from tensorflow.keras.preprocessing import image
@@ -15,8 +16,14 @@ os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 
 app = Flask(__name__)
 
+with open("amenities.txt") as f:
+    amenities = [line.strip() for line in f]
 
 model = load_model('newmodel.h5')
+with open('linearRegression_model.pkl', 'rb') as file:
+    regr = pickle.load(file)
+with open('linearRegressionScaler.pkl', 'rb') as file:
+    regression_scaler = pickle.load(file)
 
 
 def model_predict(img, model):
@@ -31,7 +38,7 @@ def model_predict(img, model):
 
 @app.route("/", methods=['GET'])
 def index():
-    return render_template('index.html')
+    return render_template('index.html', amenities=amenities)
 
 
 @app.route('/predict', methods=['GET', 'POST'])
@@ -54,7 +61,8 @@ def regress():
     if request.method == "POST":
         params = request.json
 
-        regressRes = params * 2
+        regressRes = regression_scaler.inverse_transform(
+            regr.predict([params]))[0][0]
 
         return jsonify(regressRes=regressRes)
 

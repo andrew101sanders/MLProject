@@ -15,39 +15,95 @@
     />
   </head>
   <body>
-    <h1>AirBnB Pricer</h1>
-    <p>Estimate the perfect price with machine learning!</p>
-    <div>
-      <h3>1. Upload an image</h3>
-      <input
-        type="file"
-        id="img"
-        name="img"
-        accept="image/*"
-        onchange="onFileSelected(event)"
-      />
-    </div>
-    <img id="image-display" width="200" />
-    <p id="file-name"></p>
+    <div class="container">
+      <h1>AirBnB Pricer</h1>
+      <p class="sub-title">Estimate the perfect price with machine learning!</p>
+      <div class="form-prediction">
+        <div class="form">
+          <div class="form-step">
+            <h3 class="step-title">
+              <span class="circle">1</span> Upload an image
+            </h3>
+            <input
+              type="file"
+              id="img"
+              name="img"
+              accept="image/*"
+              onchange="onFileSelected(event)"
+            />
+            <img id="image-display" />
+          </div>
 
-    <div>
-      <h3>2. Dial in your prediction</h3>
-      <div>
-        <label for="param1">Param 1</label>
-        <input type="text" name="param1" id="param1" />
-      </div>
-      <div>
-        <label for="param2">Param 2</label>
-        <input type="text" name="param2" id="param2" />
-      </div>
-      <div>
-        <label for="param3">Param 3</label>
-        <input type="text" name="param3" id="param3" />
-      </div>
-      <button onclick="onDialSubmit()">Submit</button>
-    </div>
+          <div class="form-step">
+            <h3 class="step-title">
+              <span class="circle">2</span> Add amenities
+            </h3>
+            <div class="inputs">
+              <div class="input-group">
+                <label class="input-tag" for="param1"
+                  >Number of bathrooms</label
+                >
+                <input
+                  class="input-area"
+                  type="text"
+                  name="param1"
+                  id="param1"
+                  placeholder="0"
+                />
+              </div>
+              <div class="input-group">
+                <label class="input-tag" for="param2">Number of bedrooms</label>
+                <input
+                  class="input-area"
+                  type="text"
+                  name="param2"
+                  id="param2"
+                  placeholder="0"
+                />
+              </div>
+              <div class="input-group">
+                <label class="input-tag" for="param3">Number of beds</label>
+                <input
+                  class="input-area"
+                  type="text"
+                  name="param3"
+                  id="param3"
+                  placeholder="0"
+                />
+              </div>
+            </div>
+            <div class="checkboxes">
+              {% for amenity in amenities %}
+              <label
+                for="{{ amenity.replace(' ', '') }}"
+                class="check-group"
+                id="{{ amenity.replace(' ', '') + 'label' }}"
+              >
+                <input
+                  class="amenity"
+                  type="checkbox"
+                  id="{{ amenity.replace(' ', '') }}"
+                  name="{{ amenity.replace(' ', '') }}"
+                  onchange="onCheckChange(event)"
+                />
+                <span class="checkbox-tag">{{amenity}}</span>
+              </label>
+              {% endfor %}
+            </div>
+          </div>
+          <button class="button" onclick="onSubmit()">Submit</button>
+        </div>
 
-    <p>Prediction: <span id="prediction"></span></p>
+        <div class="prediction">
+          <h2>Prediction:</h2>
+
+          <div class="number">
+            <span class="dollar-sign">$</span>
+            <span id="prediction">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="{{ url_for('static',filename='main.js') }}"></script>
   </body>
