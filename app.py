@@ -31,8 +31,8 @@ def model_predict(img, model):
     image_size = 100
     target_size = (image_size, image_size)
 
-    preds = model.predict(np.expand_dims(image.img_to_array(image.load_img(
-        img, target_size=target_size, color_mode='grayscale')), axis=0))
+    preds = regression_scaler.inverse_transform(model.predict(np.expand_dims(image.img_to_array(image.load_img(
+        img, target_size=target_size, color_mode='grayscale')), axis=0)))
 
     return str(preds[0][0])
 
