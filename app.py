@@ -7,6 +7,7 @@ import os
 import sys
 import re
 import base64
+import json
 # Flask
 from flask import Flask, redirect, url_for, request, render_template, Response, jsonify, redirect
 
@@ -16,8 +17,8 @@ os.environ['TF_FORCE_GPU_ALLOW_GROWTH'] = 'true'
 
 app = Flask(__name__)
 
-with open("amenities.txt") as f:
-    amenities = [line.strip() for line in f]
+with open("amenities.json") as f:
+    amenities = json.load(f)
 
 model = load_model('newmodel.h5')
 with open('linearRegression_model.pkl', 'rb') as file:
