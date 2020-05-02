@@ -1,0 +1,125 @@
+Accessibility
+-----------------------
+accessible-height bed
+accessible-height toilet
+disabled parking spot
+flat smooth pathway to front door
+roll-in shower with shower bench or chair
+step-free access
+wheelchair accessible
+wide clearance to bed
+wide clearance to shower and toilet
+wide doorway
+wide hallway clearance
+
+Bathroom
+-------------------------------
+baby bath
+bathtub
+essentials
+hair dryer
+hot water
+shampoo
+tub with shower bench
+
+Safety
+--------------------------------
+buzzer/wireless intercom
+carbon monoxide detector
+fire extinguisher
+fireplace guards
+first aid kit
+keypad
+lock on bedroom door
+lockbox
+path to entrance lit at night
+private entrance
+private living room
+safety card
+smart lock
+smoke detector
+window guards
+
+Kids and Family
+-----------------------------
+baby monitor
+babysitter recommendations
+cat(s)
+changing table
+children's books and toys
+children's dinnerware
+crib
+dog(s)
+family/kid friendly
+firm mattress
+hangers
+high chair
+iron
+other pet(s)
+outlet covers
+pack 'n play/travel crib
+pets allowed
+stair gates
+table corner guards
+
+Comfort and Entertainment
+---------------------
+air conditioning
+extra pillows and blankets
+beach essentials
+bed linens
+cable tv
+ethernet connection
+game console
+gym
+heating
+hot tub
+internet
+laptop friendly workspace
+pocket wifi
+tv
+wireless internet
+
+Food
+------------------
+bbq grill
+breakfast
+coffee maker
+cooking basics
+dishes and silverware
+dishwasher
+kitchen
+microwave
+oven
+refrigerator
+stove
+
+
+Property Information
+------------------------
+24-hour check-in
+cleaning before checkout
+doorman
+doorman entry
+dryer
+elevator in building
+ev charger
+free parking on premises
+free parking on street
+garden or backyard
+indoor fireplace
+lake access
+long term stays allowed
+luggage dropoff allowed
+paid parking off premises
+patio or balcony
+pets live on this property
+pool
+room-darkening shades
+self check-in
+single level home
+smoking allowed
+suitable for events
+washer
+washer / dryer
+waterfront
