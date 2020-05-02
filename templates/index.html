@@ -73,21 +73,26 @@
               </div>
             </div>
             <div class="checkboxes">
-              {% for amenity in amenities %}
-              <label
-                for="{{ amenity.replace(' ', '') }}"
-                class="check-group"
-                id="{{ amenity.replace(' ', '') + 'label' }}"
-              >
-                <input
-                  class="amenity"
-                  type="checkbox"
-                  id="{{ amenity.replace(' ', '') }}"
-                  name="{{ amenity.replace(' ', '') }}"
-                  onchange="onCheckChange(event)"
-                />
-                <span class="checkbox-tag">{{amenity}}</span>
-              </label>
+              {% for category in amenities.keys() %}
+              <h4 class="checkbox-group-title">{{category}}</h4>
+              <div class="checkbox-group">
+                {% for amenity in amenities[category] %}
+                <label
+                  for="{{ amenity.replace(' ', '') }}"
+                  class="check-group"
+                  id="{{ amenity.replace(' ', '') + 'label' }}"
+                >
+                  <input
+                    class="amenity"
+                    type="checkbox"
+                    id="{{ amenity.replace(' ', '') }}"
+                    name="{{ amenity.replace(' ', '') }}"
+                    onchange="onCheckChange(event)"
+                  />
+                  <span class="checkbox-tag">{{amenity}}</span>
+                </label>
+                {% endfor %}
+              </div>
               {% endfor %}
             </div>
           </div>
